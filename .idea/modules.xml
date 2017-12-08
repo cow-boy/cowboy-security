@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cowboy-security.iml" filepath="$PROJECT_DIR$/cowboy-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cowboy-security-app/cowboy-security-app.iml" filepath="$PROJECT_DIR$/cowboy-security-app/cowboy-security-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cowboy-security-browser/cowboy-security-browser.iml" filepath="$PROJECT_DIR$/cowboy-security-browser/cowboy-security-browser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cowboy-security-core/cowboy-security-core.iml" filepath="$PROJECT_DIR$/cowboy-security-core/cowboy-security-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cowboy-security-demo/cowboy-security-demo.iml" filepath="$PROJECT_DIR$/cowboy-security-demo/cowboy-security-demo.iml" />
+    </modules>
+  </component>
+</project>

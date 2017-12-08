@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cowboy-security-app" />
+        <module name="cowboy-security-browser" />
+        <module name="cowboy-security-core" />
+        <module name="cowboy-security-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cowboy-security" target="1.8" />
+      <module name="cowboy-security-app" target="1.8" />
+      <module name="cowboy-security-browser" target="1.8" />
+      <module name="cowboy-security-core" target="1.8" />
+      <module name="cowboy-security-demo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
