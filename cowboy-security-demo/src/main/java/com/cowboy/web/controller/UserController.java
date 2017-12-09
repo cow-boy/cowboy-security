@@ -3,10 +3,12 @@ package com.cowboy.web.controller;
 
 import com.cowboy.dto.User;
 import com.cowboy.dto.UserQueryCondition;
+import com.cowboy.exception.UserNotExistException;
 import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ import java.util.List;
  * @author huxu
  * @create 2017-12-08 9:49
  **/
-
+@Slf4j
 @RestController
 @RequestMapping("/user")
 @Api(value = "测试接口", description = "MVC接口")
@@ -114,10 +116,12 @@ public class UserController {
     @JsonView(User.UserDetailView.class)        //这个注解的作用就是控制输入输出后的json，视图类型控制
     @ApiOperation(value = "根据ID获取用户信息")
     public User getInfo(@ApiParam("用户id") @PathVariable String id) {    //@PathVariable(required = false)
-//		throw new RuntimeException("user not exist");
-        System.out.println("进入getInfo服务");
+//		throw new RuntimeException("user not exist");   //默认返回错误信息
+//        throw new UserNotExistException(id);  //自定义错误信息
+        log.info("-----------进入getInfo服务日志");
         User user = new User();
         user.setUsername("tom");
+        user.setId(id);
         return user;
     }
 

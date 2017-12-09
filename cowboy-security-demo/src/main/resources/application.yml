@@ -3,6 +3,7 @@ spring:
   profiles:
     active: prod
 
+
 #日志信息
-#logging:
-    #config: classpath:logback-spring.xml
+logging:
+  config: classpath:logback-spring.xml
