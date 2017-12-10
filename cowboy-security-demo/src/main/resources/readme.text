@@ -1,0 +1,4 @@
+1、Restful API 拦截:  过滤器(Filter)可以拿到原始的Http请求和响应的信息，但是拿不到处理方法的信息 ；
+                      拦截器(Interceptor)可以拿到原始的Http请求和响应的信息，也可以拿到处理方法的信息，但是拿不到方法调用的值；
+                      切片(Aspect)可以拿到处理方法的信息，可以拿到方法调用的值，但是拿不到原始的Http请求和响应的信息；
+   最先是Filter,     Filter > Interceptor > Aspect > Controller
