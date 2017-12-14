@@ -4,3 +4,17 @@
    最先是Filter,     Filter > Interceptor > Aspect > Controller
 
 2、文件的上传和下载
+
+3、springsecurity过滤器链（一组filter）
+    UsernamePasswordAuthenticationFilter处理表单登录
+    BasicAuthenticationFilter处理HttpBasic登录的
+    .........
+    ExceptionTranslationFilter捕获最后一个守门员的异常
+    最后一个守门员是 FilterSecurityInterceptor他决定当前请求是否能访问后面的服务
+
+4、自定义用户认证逻辑
+   处理用户信息获取逻辑 UserDetailsService
+   处理用户校验逻辑     UserDetails
+   处理密码加密解密     PasswordEncoder
+
+5、个性化用户流程
