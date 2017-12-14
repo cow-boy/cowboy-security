@@ -3,9 +3,8 @@ package com.cowboy.security.browser;
 import com.cowboy.security.browser.support.SimpleResponse;
 import com.cowboy.security.core.properties.SecurityConstants;
 import com.cowboy.security.core.properties.SecurityProperties;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;
@@ -27,11 +26,9 @@ import java.io.IOException;
  * @author huxu
  * @create 2017-12-14 17:12
  **/
-
+@Slf4j
 @RestController
 public class BrowserSecurityController {
-
-    private Logger logger = LoggerFactory.getLogger(getClass());
 
     private RequestCache requestCache = new HttpSessionRequestCache();
 
@@ -60,7 +57,7 @@ public class BrowserSecurityController {
 
         if (savedRequest != null) {
             String targetUrl = savedRequest.getRedirectUrl();
-            logger.info("引发跳转的请求是:" + targetUrl);
+            log.info("引发跳转的请求是:" + targetUrl);
             if (StringUtils.endsWithIgnoreCase(targetUrl, ".html")) {
                 redirectStrategy.sendRedirect(request, response, securityProperties.getBrowser().getLoginPage());
             }
