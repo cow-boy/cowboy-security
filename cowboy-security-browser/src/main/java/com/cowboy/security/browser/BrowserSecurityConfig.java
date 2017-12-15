@@ -1,5 +1,6 @@
 package com.cowboy.security.browser;
 
+import com.cowboy.security.browser.authentication.CowboyAuthenticationSuccessHandler;
 import com.cowboy.security.core.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,9 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private SecurityProperties securityProperties;
 
+    @Autowired
+    private CowboyAuthenticationSuccessHandler cowboyAuthenticationSuccessHandler;
+
     /**
      * 配置密码加密信息
      * @return
@@ -35,6 +39,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
         http.formLogin()
                 .loginPage("/cowboy-signIn.html")   //指定登录页面
                 .loginProcessingUrl("/authentication/form")    //表单登录的请求
+                .successHandler(cowboyAuthenticationSuccessHandler)    //指定自己的提交成功处理器
           //http.httpBasic()
                 .and()
                 .authorizeRequests()
